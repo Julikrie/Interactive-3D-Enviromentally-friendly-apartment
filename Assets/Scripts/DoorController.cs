@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class DoorController : InteractableObject
 {
-    public Animator animator;
+    
     private bool isOpen = false;
 
     public override void TriggerInteraction()
     {
         isOpen = !isOpen;
-        animator.SetBool("isOpen", isOpen);
+        Debug.Log($"Ich bin gerade offen: {isOpen}");
+        GetComponent<Animator>().SetBool("isOpen", isOpen);
     }
 }

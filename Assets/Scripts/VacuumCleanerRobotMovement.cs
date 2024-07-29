@@ -5,44 +5,42 @@ using UnityEngine;
 
 public class VacuumCleanerRobotMovement : MonoBehaviour
 {
+    // Array of waypoints
     public Transform[] waypoints;
-    public float speed = 10f;
+    // Speed of the robot
+    public float speed = 2.0f;
+    // Threshold to determine if the robot has reached the waypoint
+    public float waypointThreshold = 0.1f;
 
+    // Current waypoint index
     private int currentWaypointIndex = 0;
-
-    private void Start()
-    {
-        void Start()
-        {
-            if (waypoints.Length == 0)
-            {
-                Debug.LogError("No waypoints set for VacuumCleanerRobotMovement.");
-            }
-        }
-    }
 
     void Update()
     {
-        MoveToWaypoints();
+        if (waypoints.Length == 0)
+        {
+            return; // No waypoints defined
+        }
+
+        // Move towards the current waypoint
+        MoveTowardsWaypoint();
     }
 
-    void MoveToWaypoints()
+    void MoveTowardsWaypoint()
     {
-        if (waypoints.Length == 0) return;
-
         Transform targetWaypoint = waypoints[currentWaypointIndex];
-
         Vector3 direction = targetWaypoint.position - transform.position;
+        Vector3 movement = direction.normalized * speed * Time.deltaTime;
 
-        transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+        // Move the robot
+        transform.position += movement;
 
-        if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
+        // Check if the robot is close enough to the waypoint
+        if (direction.magnitude < waypointThreshold)
         {
-            currentWaypointIndex++;
-            if (currentWaypointIndex >= waypoints.Length)
-            {
-                currentWaypointIndex = 0;
-            }
+            // Move to the next waypoint
+            Debug.Log($"I am waypoint {currentWaypointIndex}");
+            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
     }
 }
