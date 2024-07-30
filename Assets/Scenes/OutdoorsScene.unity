@@ -1477,6 +1477,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5483448116828367094, guid: 71b18ad77048f6346b348144fa901d44,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15157,7 +15162,6 @@ GameObject:
   - component: {fileID: 1066413353}
   - component: {fileID: 1066413356}
   - component: {fileID: 1066413355}
-  - component: {fileID: 1066413354}
   m_Layer: 0
   m_Name: WasserProzentual
   m_TagString: Untagged
@@ -15184,19 +15188,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.0513, y: -0.0022}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1066413354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066413352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a903e828bfc1446ac5ef50e22abd27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  updateInterval: 1
 --- !u!114 &1066413355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26089,7 +26080,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651296159}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0022}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27571,7 +27562,6 @@ GameObject:
   - component: {fileID: 1754823148}
   - component: {fileID: 1754823151}
   - component: {fileID: 1754823150}
-  - component: {fileID: 1754823149}
   m_Layer: 0
   m_Name: WasserText
   m_TagString: Untagged
@@ -27598,19 +27588,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.052, y: -0.0022}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1754823149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754823147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a903e828bfc1446ac5ef50e22abd27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  updateInterval: 1
 --- !u!114 &1754823150
 MonoBehaviour:
   m_ObjectHideFlags: 0
